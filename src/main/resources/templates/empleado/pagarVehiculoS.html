@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="x-ua-compatible">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link href="../css/misprimerosestilos.css" rel="stylesheet" type="text/css">
+</head>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<a class="navbar-brand">Empleado</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+			aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav">
+				<li class="nav-item">
+
+					<a class="nav-link" th:href="@{/empleados/index}">Inicio <span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" th:href="@{/empleados/clienteNuevo}">Registrar Cliente</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" th:href="@{/empleados/vehiculoNuevo}">Ingresar Vehiculo</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" th:href="@{/empleados/todos}">Ver Clientes</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" th:href="@{/empleados/todosVehiculo}">Ver Vehiculos</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" th:href="@{/empleados/retirarVehiculoBuscar}">Retirar Vehiculo Con Reserva</a>
+				</li>
+
+				<li class="nav-item active">
+					<a class="nav-link" th:href="@{/empleados/buscarVehiculos}">Retirar Vehiculo Sin Reserva</a>
+				</li>
+				
+				<li class="nav-item ">
+					<a class="nav-link btn-danger" th:href="@{/sistema/index}">Salir</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+<div class="container">
+		<div class="row">
+		
+			<div class="col-4 "><br>
+				<div th:if="${reserva!=null} AND ${reserva.cobro!=null}">
+					<h3> Vehiculo disponible</h3>
+					<h4> total a pagar: </h4>
+					<h4 th:text="${#numbers.formatDecimal(reserva.cobro.valorTotalPagar,1,2)}"></h4>
+				</div>
+			</div>
+			<div class="col-6"><br>
+				<div class="container my-1 d-flex justify-content-center ">
+					<h1>Pagar Vehiculo</h1>
+				</div>
+				<div class="container my-1 d-flex justify-content-center ">
+
+					<div class="card text-white bg-dark mb-3">
+						<form th:action="@{/empleados/reservar/pagarVehiculo}" th:object="${reserva}" th:method="put">
+							<div class="table table-dark table-striped">
+								<table>
+									<tr>
+										<td>
+											<label class="col-form-label">Placa:</label>
+										</td>
+										<td>
+											<input class="form-control" type="text" id="placa"
+												th:field="*{vehiculo.placa}" required>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<label>Cedula:</label>
+										</td>
+										<td>
+											<input class="form-control" type="text" id="cedula"
+												th:field="*{cliente.cedula}" required>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<label>Fecha inicio:</label>
+										</td>
+										<td>
+											<input class="form-control" type="datetime-local" id="fechai"
+												th:field="*{fechaInicio}" required>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<label>Fecha fin:</label>
+										</td>
+										<td>
+											<input class="form-control" type="datetime-local" id="fechaf"
+												th:field="*{fechaFin}" required>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<label>Ingrese numero de tarjeta de crédito:</label>
+										</td>
+										<td>
+											<input type="text" id="tarjeta" th:field="*{cobro.tarjeta}" required>
+
+										</td>
+									</tr>
+
+									<tr>
+									</tr>
+								</table>
+								<div class="container my-1 d-flex justify-content-center ">
+									<input class="btn btn-info" type="submit" value="Pagar">
+								</div>
+						</form>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+	<!--<div class="alert alert-success" role="alert" th:text="${mensaje}" th:if="${mensaje!=null}"> </div>-->
+
+</body>
+
+
+
+</html>

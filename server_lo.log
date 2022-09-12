@@ -1,0 +1,19 @@
+2022-09-11 20:26:45 INFO  root:218 - El id del vehiculo con placa PPE342 es 157
+2022-09-11 20:26:45 INFO  root:148 - Los vehiculos son:[com.uce.edu.demo.repository.modelo.Vehiculo@619b7436]
+2022-09-11 20:26:45 INFO  root:256 - Los vehiculos son:[com.uce.edu.demo.repository.modelo.Vehiculo@7d12fb85]
+2022-09-11 20:26:45 INFO  root:234 - Los coches de la marca son: [com.uce.edu.demo.repository.modelo.Vehiculo@2389f546]
+2022-09-11 20:28:54 INFO  root:218 - El id del vehiculo con placa PPE342 es 166
+2022-09-11 20:28:54 INFO  root:148 - Los vehiculos son:[com.uce.edu.demo.repository.modelo.Vehiculo@2389f546]
+2022-09-11 20:28:54 INFO  root:256 - Los vehiculos son:[com.uce.edu.demo.repository.modelo.Vehiculo@67521a79]
+2022-09-11 20:28:54 INFO  root:108 - El id del vehiculo con placa DJK-1741 es 154
+2022-09-11 20:28:54 INFO  root:234 - Los coches de la marca son: [com.uce.edu.demo.repository.modelo.Vehiculo@74691677]
+2022-09-11 20:29:44 INFO  root:260 - Clientes con apellido:Ordoñez son: [com.uce.edu.demo.repository.modelo.Cliente@438a65a7, com.uce.edu.demo.repository.modelo.Cliente@3751baf6, com.uce.edu.demo.repository.modelo.Cliente@6b6fde93]
+2022-09-11 20:29:44 INFO  root:190 - Genero: Masculino
+2022-09-11 20:29:44 INFO  root:193 - Genero actualizado: Femenino
+2022-09-11 20:29:44 INFO  root:227 - Cliente eliminado: null
+2022-09-11 20:29:44 INFO  root:76 - Cedula: null
+2022-09-11 20:29:44 INFO  root:79 - Cedula actualizada: 23132
+2022-09-11 20:29:44 INFO  root:66 - Cliente: com.uce.edu.demo.repository.modelo.Cliente@64245ca9
+2022-09-11 20:29:44 INFO  root:180 - Cliente: com.uce.edu.demo.repository.modelo.Cliente@1abd1a28
+2022-09-11 20:29:44 INFO  root:111 - Cliente eliminado: null
+2022-09-12 13:12:58 INFO  ProyectoGrupalPa2Application:77 - com.uce.edu.demo.repository.modelo.Cliente@6fd502e9

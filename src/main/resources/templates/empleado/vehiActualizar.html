@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" conten="width=device-width, initial-scale=1">
+	<meta http-equiv="x-ua-compatible">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<a class="navbar-brand  text-white">Empleado</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+			aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav">
+				<li class="nav-item ">
+
+					<a class="nav-link" th:href="@{/empleados/index}">Inicio </a>
+				</li>
+				<li class="nav-item ">
+					<a class="nav-link" th:href="@{/empleados/clienteNuevo}">Registrar Cliente</a>
+				</li>
+				<li class="nav-item ">
+					<a class="nav-link" th:href="@{/empleados/vehiculoNuevo}">Ingresar Vehiculo</a>
+				</li>
+				<li class="nav-item ">
+					<a class="nav-link" th:href="@{/empleados/todos}">Ver Clientes</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" th:href="@{/empleados/todosVehiculo}">Ver Vehiculos<span
+							class="sr-only">(current)</span></a>
+				</li>
+					<li class="nav-item">
+					<a class="nav-link" th:href="@{/empleados/retirarVehiculoBuscar}">Retirar Vehiculo Con Reserva</a>
+				</li>
+				
+				<li class="nav-item">
+					<a class="nav-link" th:href="@{/empleados/buscarVehiculos}">Retirar Vehiculo Sin Reserva</a>
+				</li>
+				<li class="nav-item ">
+					<a class="nav-link btn-danger" th:href="@{/sistema/index}">Salir</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<div class="container my-1 d-flex justify-content-center ">
+		<h1>Actualizar vehiculo</h1>
+	</div>
+	<div class="container my-1 d-flex justify-content-center  ">
+
+
+
+
+		<div class="card text-white bg-dark mb-3">
+			<form action="#" th:action="@{/empleados/actualizarVehiculo/{placa}(placa=${vehiculo.placa})}"
+				th:object="${vehiculo}" th:method="put">
+				<div class="table table-dark table-striped">
+					<table>
+						<tr>
+							<td><label>Placa:</label></td>
+							<td><input type="text" class="form-control" id="placa" th:field="*{placa}"
+									th:readonly="true">
+							</td>
+						</tr>
+						<tr>
+							<td><label>Modelo:</label></td>
+							<td><input type="text" class="form-control" id="modelo" th:field="*{modelo}"></td>
+						</tr>
+
+						<tr>
+							<td><label>Marca:</label></td>
+							<td><input type="text" class="form-control" id="marca" th:field="*{marca}"></td>
+						</tr>
+
+
+
+						<tr>
+							<td><label>Año de Fabricacion:</label></td>
+							<td><input type="text" class="form-control" id="anioFabricacion"
+									th:field="*{anioFabricacion}">
+							</td>
+						</tr>
+						<tr>
+							<td><label>Pais de Fabricacion:</label></td>
+							<td><input type="text" class="form-control" id="paisFabricacion"
+									th:field="*{paisFabricacion}">
+							</td>
+						</tr>
+						<tr>
+							<td><label>Cilindraje:</label></td>
+							<td><input type="text" class="form-control" id="cilindraje" th:field="*{cilindraje}">
+							</td>
+						</tr>
+						<tr>
+							<td><label>Avaluo:</label></td>
+							<td><input type="number" class="form-control" id="avaluo" th:field="*{avaluo}" step="0.01"
+									min="0"></td>
+						</tr>
+						<tr>
+							<td><label>Valor Por Dia:</label></td>
+							<td><input type="number" class="form-control" id="valorPorDia" th:field="*{valorPorDia}"
+									step="0.01" min="0"></td>
+						</tr>
+
+
+
+					</table>
+				</div>
+				<div class="container my-1 d-flex justify-content-center ">
+					<input class="btn btn-info" type="submit" value="Actualizar">
+				</div>
+
+			</form>
+		</div>
+	</div>
+</body>
+
+</html>
